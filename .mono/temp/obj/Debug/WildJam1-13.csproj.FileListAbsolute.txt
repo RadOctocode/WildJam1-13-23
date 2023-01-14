@@ -1,0 +1,9 @@
+C:\Users\mtan2\Documents\WildJam1-13\.mono\temp\obj\Debug\WildJam1-13.csproj.AssemblyReference.cache
+C:\Users\mtan2\Documents\WildJam1-13\.mono\temp\obj\Debug\WildJam1-13.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mtan2\Documents\WildJam1-13\.mono\temp\obj\Debug\WildJam1-13.AssemblyInfoInputs.cache
+C:\Users\mtan2\Documents\WildJam1-13\.mono\temp\obj\Debug\WildJam1-13.AssemblyInfo.cs
+C:\Users\mtan2\Documents\WildJam1-13\.mono\temp\obj\Debug\WildJam1-13.csproj.CoreCompileInputs.cache
+C:\Users\mtan2\Documents\WildJam1-13\.mono\temp\bin\Debug\WildJam1-13.dll
+C:\Users\mtan2\Documents\WildJam1-13\.mono\temp\bin\Debug\WildJam1-13.pdb
+C:\Users\mtan2\Documents\WildJam1-13\.mono\temp\obj\Debug\WildJam1-13.dll
+C:\Users\mtan2\Documents\WildJam1-13\.mono\temp\obj\Debug\WildJam1-13.pdb
