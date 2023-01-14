@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_name = "Mat_Standard"
@@ -21,11 +21,17 @@ surfaces/0 = {
 "vertex_count": 701
 }
 
-[node name="Node" type="Node"]
+[sub_resource type="CapsuleShape" id=3]
 
-[node name="Giraffe" type="Spatial" parent="."]
-transform = Transform( 0.05, 0, 0, 0, -2.18557e-09, -0.05, 0, 0.05, -2.18557e-09, 0, 0, 0 )
+[node name="Giraffe" type="Spatial"]
+
+[node name="Giraffe" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 
 [node name="base059" type="MeshInstance" parent="Giraffe"]
-transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )
+transform = Transform( 0.005, 0, 0, 0, 0.005, 7.10545e-17, 0, -7.10545e-17, 0.005, 0, 0, 0 )
 mesh = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Giraffe"]
+transform = Transform( 1, 0, 0, 0, 1, -1.77636e-14, 0, 1.77636e-14, 1, 0, -5.2082e-08, -1.1915 )
+shape = SubResource( 3 )

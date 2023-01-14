@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_name = "Mat_Standard"
@@ -21,11 +21,17 @@ surfaces/0 = {
 "vertex_count": 917
 }
 
-[node name="Node" type="Node"]
+[sub_resource type="SphereShape" id=3]
 
-[node name="Megaloceros" type="Spatial" parent="."]
-transform = Transform( 0.05, 0, 0, 0, -2.18557e-09, -0.05, 0, 0.05, -2.18557e-09, 0, 0, 0 )
+[node name="Deer" type="Spatial"]
+
+[node name="Megaloceros" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 
 [node name="base082" type="MeshInstance" parent="Megaloceros"]
-transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )
+transform = Transform( 0.005, 0, 0, 0, 0.005, 2.64077e-11, 0, -2.64077e-11, 0.005, 0, 0, 0 )
 mesh = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Megaloceros"]
+transform = Transform( 1, 0, 0, 0, 1, -2.75324e-08, 0, 2.75324e-08, 1, 0, 0.15, -0.777 )
+shape = SubResource( 3 )
