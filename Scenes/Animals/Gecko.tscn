@@ -28,7 +28,6 @@ height = 2.0406
 
 [node name="Pivot" type="RigidBody" parent="."]
 transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0 )
-axis_lock_angular_y = true
 
 [node name="base118" type="MeshInstance" parent="Pivot"]
 transform = Transform( 0.005, 0, 0, 0, 0.005, 7.10545e-17, 0, -7.10545e-17, 0.005, 0, 0, 0 )
