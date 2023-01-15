@@ -83,4 +83,4 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 38.4
 
 [node name="Spawner" type="Node" parent="."]
 script = ExtResource( 6 )
-Animals = [ ExtResource( 4 ) ]
+Animals = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ) ]
