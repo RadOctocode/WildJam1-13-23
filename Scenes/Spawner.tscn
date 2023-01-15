@@ -1,0 +1,22 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Script/Spawner.cs" type="Script" id=1]
+[ext_resource path="res://Scenes/Animals/Hippo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Animals/Dog.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Animals/WoolyMammoth.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Animals/Grasshopper.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Animals/Giraffe.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Animals/Deer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Animals/Seal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Animals/Gecko.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Animals/Mandrill.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Animals/Cat.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Animals/Camel.tscn" type="PackedScene" id=12]
+
+[node name="Spawner" type="Node"]
+script = ExtResource( 1 )
+Animals = [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 4 ) ]
+
+[node name="AnimalTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="AnimalTimer" to="." method="_on_AnimalTimer_timeout"]

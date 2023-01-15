@@ -11,16 +11,23 @@ public class Spawner : Node
 	public List<PackedScene> Animals;
 	// Camera used by the game to look at the tower.
 	public Position3D GameCamera;
+	public int Score;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		canSpawn = true;
+		GetNode<Timer>("AnimalTimer").Start();
+		Score = 0;
+	}
+
+	public Spatial RotateAnimal(){
+		var choice = GD.Randi() % Animals.Count;
+		return (Spatial)Animals[(int)choice].Instance();
 	}
 
 	public void SpawnAnimal(Vector2 pos) {
-		var choice = GD.Randi() % Animals.Count;
-		var animal = (Spatial)Animals[(int)choice].Instance();
+		var animal = RotateAnimal();
 		var distanceToOrigin = GameCamera.Translation.z;
 		var spawnPoint = GameCamera.GetNode<Camera>("Camera").ProjectPosition(pos, distanceToOrigin);
 		animal.Translation = spawnPoint;
@@ -39,8 +46,10 @@ public class Spawner : Node
 		}
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(float delta)
+	public void _on_AnimalTimer_timeout()
 	{
+		RotateAnimal();
+		Score--;
 	}
+
 }
