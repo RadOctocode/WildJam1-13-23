@@ -4,6 +4,12 @@
 
 [node name="EverythingLibrary_Animals_002" instance=ExtResource( 1 )]
 
+[node name="Chimpanzee" parent="ANIMALS/Animals" index="26"]
+transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )
+
+[node name="Dobermann" parent="ANIMALS/Animals" index="29"]
+transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )
+
 [node name="base058" parent="ANIMALS/Animals/Elephant" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 203.459, -488.945, 5.82868e-05 )
 
@@ -27,6 +33,12 @@ transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )
 
 [node name="base078" parent="ANIMALS/Animals/WoolyMammoth" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, -530.928, 0, 0 )
+
+[node name="base102" parent="ANIMALS/Birds/Eagle" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )
+
+[node name="base016" parent="ANIMALS/Insects/Centipede" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )
 
 [node name="base011" parent="ANIMALS/Insects/Grasshopper" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )

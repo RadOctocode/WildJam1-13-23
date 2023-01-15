@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_name = "Mat_Standard"
@@ -21,9 +21,20 @@ surfaces/0 = {
 "vertex_count": 917
 }
 
-[sub_resource type="SphereShape" id=3]
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.359204, 0.491631, 0.160849 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.203637, 0.48322, 0.426429 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.241574, 0.269987, 0.342471 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.376904, 0.120534, 0.15314 )
 
 [node name="Deer" type="Spatial"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
 
 [node name="Megaloceros" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
@@ -34,6 +45,22 @@ axis_lock_angular_y = true
 transform = Transform( 0.005, 0, 0, 0, 0.005, 2.64077e-11, 0, -2.64077e-11, 0.005, 0, 0, 0 )
 mesh = SubResource( 2 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Megaloceros"]
-transform = Transform( 1, 0, 0, 0, 1, -2.75324e-08, 0, 2.75324e-08, 1, 0, 0.15, -0.777 )
+[node name="Body" type="CollisionShape" parent="Megaloceros"]
+transform = Transform( 1, 0, 0, 0, 1, -2.75324e-08, 0, 2.75324e-08, 1, 0, -0.0481139, -0.777 )
 shape = SubResource( 3 )
+
+[node name="Legs" type="CollisionShape" parent="Megaloceros"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.0156561, -0.468348 )
+shape = SubResource( 4 )
+
+[node name="NeckAndHead" type="CollisionShape" parent="Megaloceros"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.629987, -1 )
+shape = SubResource( 5 )
+
+[node name="Horn1" type="CollisionShape" parent="Megaloceros"]
+transform = Transform( 0.779425, 0.626495, -2.7385e-08, -0.626495, 0.779425, 9.64162e-09, 2.7385e-08, 9.64162e-09, 1, 0.482237, 0.471001, -1.32847 )
+shape = SubResource( 6 )
+
+[node name="Horn2" type="CollisionShape" parent="Megaloceros"]
+transform = Transform( 0.827491, 0.561464, -0.00412786, 0.560719, -0.825967, 0.0580651, 0.0291919, -0.0503629, -0.998304, -0.411588, 0.585497, -1.35647 )
+shape = SubResource( 6 )

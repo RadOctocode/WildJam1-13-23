@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Models/Mat_Transp.material" type="Material" id=1]
 
@@ -38,7 +38,17 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="CapsuleShape" id=4]
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.318589, 0.93459, 0.15068 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.372388, 0.117667, 0.327285 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.32408, 0.43507, 0.146454 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.387303, 0.342961, 0.142726 )
 
 [node name="Grasshopper" type="Spatial"]
 
@@ -55,6 +65,18 @@ mesh = SubResource( 2 )
 transform = Transform( 0.005, 0, 0, 0, 0.005, 6.93889e-17, 0, -6.93889e-17, 0.005, 0, 0, 0 )
 mesh = SubResource( 3 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Grasshopper"]
-transform = Transform( 1, 0, 0, 0, -4.47231e-08, -0.749606, 0, 0.476066, -8.85274e-09, 0, -1.48779e-08, -0.340367 )
+[node name="Body" type="CollisionShape" parent="Grasshopper"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.123002, -0.478431 )
 shape = SubResource( 4 )
+
+[node name="HindLegs" type="CollisionShape" parent="Grasshopper"]
+transform = Transform( 1, 0, 0, 0, 0.619478, 0.785014, 0, -0.785014, 0.619478, 0, -0.524059, -0.589804 )
+shape = SubResource( 5 )
+
+[node name="BackLegs" type="CollisionShape" parent="Grasshopper"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.61436, -0.179504 )
+shape = SubResource( 6 )
+
+[node name="FrontLegs" type="CollisionShape" parent="Grasshopper"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.652392, -0.210024 )
+shape = SubResource( 7 )
