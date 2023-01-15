@@ -38,8 +38,7 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="BoxShape" id=4]
-extents = Vector3( 0.318589, 0.93459, 0.15068 )
+[sub_resource type="CapsuleShape" id=4]
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.372388, 0.117667, 0.327285 )
