@@ -27,6 +27,8 @@ surfaces/0 = {
 
 [node name="Megaloceros" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+axis_lock_linear_z = true
+axis_lock_angular_y = true
 
 [node name="base082" type="MeshInstance" parent="Megaloceros"]
 transform = Transform( 0.005, 0, 0, 0, 0.005, 2.64077e-11, 0, -2.64077e-11, 0.005, 0, 0, 0 )

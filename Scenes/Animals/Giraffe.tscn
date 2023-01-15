@@ -27,6 +27,8 @@ surfaces/0 = {
 
 [node name="Giraffe" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+axis_lock_linear_z = true
+axis_lock_angular_y = true
 
 [node name="base059" type="MeshInstance" parent="Giraffe"]
 transform = Transform( 0.005, 0, 0, 0, 0.005, 7.10545e-17, 0, -7.10545e-17, 0.005, 0, 0, 0 )
