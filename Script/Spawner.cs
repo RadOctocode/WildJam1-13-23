@@ -9,7 +9,7 @@ public class Spawner : Node
 	public List<PackedScene> Animals;
 	// Camera used by the game to look at the tower.
 	public Position3D GameCamera;
-	
+	public int Score;	
 	private bool canSpawn = false;
 	private Queue<int> queue;
 	private const int QUEUE_SIZE = 3;
@@ -19,6 +19,8 @@ public class Spawner : Node
 	{
 		initQueue();
 		canSpawn = true;
+		GetNode<Timer>("AnimalTimer").Start();
+		Score = 0;
 	}
 	
 	private void initQueue() {
@@ -68,8 +70,10 @@ public class Spawner : Node
 		}
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(float delta)
+	public void _on_AnimalTimer_timeout()
 	{
+		rotateQueue();
+		Score--;
 	}
+
 }
