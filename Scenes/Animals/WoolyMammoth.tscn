@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_name = "Mat_Standard"
@@ -21,9 +21,17 @@ surfaces/0 = {
 "vertex_count": 707
 }
 
-[sub_resource type="CapsuleShape" id=3]
-radius = 1.20784
-height = 0.670097
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.642001, 0.807672, 0.459446 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.57266, 0.929551, 0.520395 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.368103, 0.307389, 0.867375 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.474601, 0.219587, 0.358233 )
 
 [node name="WoolyMammoth" type="Spatial"]
 
@@ -36,6 +44,18 @@ axis_lock_angular_y = true
 transform = Transform( 0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0 )
 mesh = SubResource( 2 )
 
-[node name="CollisionShape" type="CollisionShape" parent="WoolyMammoth"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.266938, -0.947385 )
+[node name="Legs" type="CollisionShape" parent="WoolyMammoth"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0300834, -0.15517, -0.523384 )
 shape = SubResource( 3 )
+
+[node name="Body" type="CollisionShape" parent="WoolyMammoth"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.132515, -1.53412 )
+shape = SubResource( 4 )
+
+[node name="Head" type="CollisionShape" parent="WoolyMammoth"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05134, -1.12061 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="WoolyMammoth"]
+transform = Transform( 1, 0, 0, 0, 0.88401, -0.467467, 0, 0.467467, 0.88401, 0, 1.60821, -0.860529 )
+shape = SubResource( 6 )
