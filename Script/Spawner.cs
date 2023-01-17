@@ -64,7 +64,7 @@ public class Spawner : Node
 	}
 
 	private Spatial getTallestAnimal(List<Spatial> animals){
-		Spatial returnVal = new Spatial{};
+		Spatial returnVal = new Spatial();
 		Vector3 currentTallest = new Vector3(0.0f,0.0f,0.0f);
 		for (int i = 0; i< animals.Count; i++){
 			var currentSpatial = animals[i];
