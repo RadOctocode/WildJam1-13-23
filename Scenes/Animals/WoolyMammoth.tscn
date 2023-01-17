@@ -34,29 +34,31 @@ extents = Vector3( 0.368103, 0.307389, 0.867375 )
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.474601, 0.219587, 0.358233 )
 
-[node name="WoolyMammoth" type="Spatial"]
+[node name="Spatial" type="Spatial"]
 
-[node name="WoolyMammoth" type="RigidBody" parent="."]
+[node name="RigidBody" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+contacts_reported = 2
+contact_monitor = true
 axis_lock_linear_z = true
 axis_lock_angular_y = true
 
-[node name="base078" type="MeshInstance" parent="WoolyMammoth"]
+[node name="base078" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0 )
 mesh = SubResource( 2 )
 
-[node name="Legs" type="CollisionShape" parent="WoolyMammoth"]
+[node name="Legs" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0300834, -0.15517, -0.523384 )
 shape = SubResource( 3 )
 
-[node name="Body" type="CollisionShape" parent="WoolyMammoth"]
+[node name="Body" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.132515, -1.53412 )
 shape = SubResource( 4 )
 
-[node name="Head" type="CollisionShape" parent="WoolyMammoth"]
+[node name="Head" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05134, -1.12061 )
 shape = SubResource( 5 )
 
-[node name="CollisionShape" type="CollisionShape" parent="WoolyMammoth"]
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 0.88401, -0.467467, 0, 0.467467, 0.88401, 0, 1.60821, -0.860529 )
 shape = SubResource( 6 )

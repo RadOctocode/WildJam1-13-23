@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleMesh" id=2]
 
-[node name="Dummy" type="RigidBody"]
+[node name="Spatial" type="RigidBody"]
 axis_lock_angular_y = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

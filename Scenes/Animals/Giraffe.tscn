@@ -33,29 +33,31 @@ extents = Vector3( 0.0978448, 0.105229, 0.492111 )
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.135127, 0.243111, 0.0895276 )
 
-[node name="Giraffe" type="Spatial"]
+[node name="Spatial" type="Spatial"]
 
-[node name="Giraffe" type="RigidBody" parent="."]
+[node name="RigidBody" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+contacts_reported = 2
+contact_monitor = true
 axis_lock_linear_z = true
 axis_lock_angular_y = true
 
-[node name="base059" type="MeshInstance" parent="Giraffe"]
+[node name="base059" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 0.005, 0, 0, 0, 0.005, 7.10545e-17, 0, -7.10545e-17, 0.005, 0, 0, 0 )
 mesh = SubResource( 2 )
 
-[node name="Legs" type="CollisionShape" parent="Giraffe"]
+[node name="Legs" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0879159, -0.520143 )
 shape = SubResource( 4 )
 
-[node name="Body" type="CollisionShape" parent="Giraffe"]
+[node name="Body" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0159456, -1.22089 )
 shape = SubResource( 5 )
 
-[node name="Neck" type="CollisionShape" parent="Giraffe"]
+[node name="Neck" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 0.952523, -0.304465, 0, 0.304465, 0.952523, 0, 0.465458, -1.98561 )
 shape = SubResource( 6 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Giraffe"]
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0133574, 0.680207, -2.26253 )
 shape = SubResource( 7 )

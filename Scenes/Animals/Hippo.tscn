@@ -33,28 +33,30 @@ extents = Vector3( 1, 1, 0.865828 )
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.617888, 1.27484, 0.793673 )
 
-[node name="Hippo" type="Spatial"]
+[node name="Spatial" type="Spatial"]
 transform = Transform( 0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0 )
 
-[node name="Hippo" type="RigidBody" parent="."]
+[node name="RigidBody" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )
+contacts_reported = 2
+contact_monitor = true
 
-[node name="base026" type="MeshInstance" parent="Hippo"]
+[node name="base026" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0 )
 mesh = SubResource( 2 )
 
-[node name="Legs" type="CollisionShape" parent="Hippo"]
+[node name="Legs" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07464, -1.02589 )
 shape = SubResource( 3 )
 
-[node name="Body" type="CollisionShape" parent="Hippo"]
+[node name="Body" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.887059, -3.16604 )
 shape = SubResource( 4 )
 
-[node name="Neck" type="CollisionShape" parent="Hippo"]
+[node name="Neck" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.32851, -3.51167 )
 shape = SubResource( 5 )
 
-[node name="Head" type="CollisionShape" parent="Hippo"]
+[node name="Head" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 0.726826, -0.686821, 0, 0.686821, 0.726826, 0, 3.49729, -2.76202 )
 shape = SubResource( 6 )

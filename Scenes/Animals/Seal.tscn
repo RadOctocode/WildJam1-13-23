@@ -30,24 +30,26 @@ extents = Vector3( 1.66675, 0.581918, 0.30608 )
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.49548, 0.571642, 0.317586 )
 
-[node name="Seal" type="Spatial"]
+[node name="Spatial" type="Spatial"]
 transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0 )
 
-[node name="HarbourSeal" type="RigidBody" parent="."]
+[node name="RigidBody" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )
+contacts_reported = 2
+contact_monitor = true
 
-[node name="base081" type="MeshInstance" parent="HarbourSeal"]
+[node name="base081" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 0.03, 0, 0, 0, 0.03, -8.32667e-17, 0, 8.32667e-17, 0.03, 0, 0, 0 )
 mesh = SubResource( 2 )
 
-[node name="Body" type="CollisionShape" parent="HarbourSeal"]
+[node name="Body" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 0.999999, 1.06581e-14, 0, -1.06581e-14, 0.999999, 0, 0.0142825, -0.81366 )
 shape = SubResource( 3 )
 
-[node name="Flippers" type="CollisionShape" parent="HarbourSeal"]
+[node name="Flippers" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 7.10543e-15, 0, -7.10543e-15, 1, 0, 1.35194, -0.330914 )
 shape = SubResource( 4 )
 
-[node name="CollisionShape" type="CollisionShape" parent="HarbourSeal"]
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 7.10543e-15, 0, -7.10543e-15, 1, 0, 2.34433, -1.79445 )
 shape = SubResource( 5 )
