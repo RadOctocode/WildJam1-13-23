@@ -21,9 +21,8 @@ surfaces/0 = {
 "vertex_count": 707
 }
 
-[sub_resource type="CapsuleShape" id=3]
-radius = 1.20784
-height = 0.670097
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.638187, 0.613933, 0.418535 )
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.57266, 0.929551, 0.520395 )
@@ -48,8 +47,8 @@ transform = Transform( 0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0 )
 mesh = SubResource( 2 )
 
 [node name="Legs" type="CollisionShape" parent="RigidBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0300834, -0.15517, -0.523384 )
-shape = SubResource( 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0300834, 0.0953831, -0.469766 )
+shape = SubResource( 7 )
 
 [node name="Body" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.132515, -1.53412 )
