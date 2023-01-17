@@ -6,10 +6,10 @@ public class Spawner : Node
 {
 	// List of animals to pull from when spawning.
 	[Export]
-	public List<PackedScene> Animals;
+	public List<PackedScene> Animals { get; set; }
 	// Camera used by the game to look at the tower.
-	public Position3D GameCamera;
-	public int Score;	
+	public Position3D GameCamera { get; set; }
+	public int Score;
 	private bool canSpawn = false;
 	private Queue<int> queue;
 	private const int QUEUE_SIZE = 3;
@@ -41,6 +41,15 @@ public class Spawner : Node
 		int next = chooseAnimal();
 		GD.Print("Enqueing animal ", next);
 		queue.Enqueue(next);
+		onQueueUpdated();
+	}
+	
+	private void onQueueUpdated() {
+		var queueState = new Godot.Collections.Array<PackedScene>();
+		foreach (int i in queue) {
+			queueState.Add(Animals[i]);
+		}
+		EmitSignal(nameof(AnimalQueueUpdated), queueState);
 	}
 	
 	private int rotateQueue() {
@@ -50,7 +59,7 @@ public class Spawner : Node
 	}
 
 	public void SpawnAnimal(PackedScene animalScene, Vector2 pos) {
-		var animal = (Spatial)animalScene.Instance();
+		var animal = animalScene.Instance<Spatial>();
 		var distanceToOrigin = GameCamera.Translation.z;
 		var spawnPoint = GameCamera.GetNode<Camera>("Camera").ProjectPosition(pos, distanceToOrigin);
 		animal.Translation = spawnPoint;
@@ -70,10 +79,12 @@ public class Spawner : Node
 		}
 	}
 
+	[Signal]
+	public delegate void AnimalQueueUpdated(Godot.Collections.Array<PackedScene> queue);
+
 	public void _on_AnimalTimer_timeout()
 	{
 		rotateQueue();
 		Score--;
 	}
-
 }

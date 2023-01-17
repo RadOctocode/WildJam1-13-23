@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Script/AnimalQueueContainer.cs" type="Script" id=1]
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Rotation"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ), Vector3( 90, 360, 0 ) ]
+}
+
+[sub_resource type="GradientTexture" id=12]
+
+[node name="AnimalQueueContainer" type="ViewportContainer"]
+margin_top = 453.0
+margin_right = 450.0
+margin_bottom = 603.0
+script = ExtResource( 1 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 150, 150 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="Viewport"]
+cull_mask = 524288
+current = true
+far = 2.5
+
+[node name="MeshInstance" type="MeshInstance" parent="Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -1 )
+layers = 524288
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Viewport"]
+autoplay = "Rotation"
+anims/RESET = SubResource( 10 )
+anims/Rotation = SubResource( 11 )
+
+[node name="Background" type="Sprite3D" parent="Viewport"]
+layers = 524288
+modulate = Color( 0.945098, 0.333333, 0, 1 )
+texture = SubResource( 12 )
