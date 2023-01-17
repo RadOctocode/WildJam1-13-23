@@ -36,6 +36,8 @@ transform = Transform( 0.45, 0, 0, 0, -1.96701e-08, -0.45, 0, 0.45, -1.96701e-08
 [node name="RigidBody" type="RigidBody" parent="."]
 contacts_reported = 2
 contact_monitor = true
+axis_lock_linear_z = true
+axis_lock_angular_y = true
 
 [node name="eyes004" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0 )
