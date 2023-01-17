@@ -9,7 +9,7 @@ public class Spawner : Node
 	public List<PackedScene> Animals { get; set; }
 	// Camera used by the game to look at the tower.
 	public Position3D GameCamera { get; set; }
-	
+	public int Score;
 	private bool canSpawn = false;
 	private Queue<int> queue;
 	private const int QUEUE_SIZE = 3;
@@ -19,6 +19,8 @@ public class Spawner : Node
 	{
 		initQueue();
 		canSpawn = true;
+		GetNode<Timer>("AnimalTimer").Start();
+		Score = 0;
 	}
 	
 	private void initQueue() {
@@ -79,4 +81,10 @@ public class Spawner : Node
 
 	[Signal]
 	public delegate void AnimalQueueUpdated(Godot.Collections.Array<PackedScene> queue);
+
+	public void _on_AnimalTimer_timeout()
+	{
+		rotateQueue();
+		Score--;
+	}
 }
