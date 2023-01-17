@@ -34,6 +34,8 @@ transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0
 transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0 )
 contacts_reported = 2
 contact_monitor = true
+axis_lock_linear_z = true
+axis_lock_angular_y = true
 
 [node name="base032" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0 )
