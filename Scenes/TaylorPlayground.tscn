@@ -1,11 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scenes/Animals/Giraffe.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Animals/Gecko.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Animals/Grasshopper.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Animals/Deer.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Animals/WoolyMammoth.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Script/Spawner.cs" type="Script" id=6]
+[ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Script/Game.cs" type="Script" id=7]
 
 [sub_resource type="BoxShape" id=3]
@@ -64,23 +59,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.36579, 13.2257 )
 [node name="Camera" type="Camera" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.834508, 0 )
 
-[node name="Gecko" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0 )
-
 [node name="OmniLight" type="OmniLight" parent="."]
 
-[node name="Deer" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 9.90561, 0 )
-
-[node name="Grasshopper" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 15.9645, 0 )
-
-[node name="Giraffe" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 15.9645, 0 )
-
-[node name="WoolyMammoth" parent="." instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 38.4075, 0 )
-
-[node name="Spawner" type="Node" parent="."]
-script = ExtResource( 6 )
-Animals = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ) ]
+[node name="Spawner" parent="." instance=ExtResource( 6 )]
