@@ -37,8 +37,6 @@ extents = Vector3( 0.474601, 0.219587, 0.358233 )
 
 [node name="RigidBody" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-contacts_reported = 2
-contact_monitor = true
 axis_lock_linear_z = true
 axis_lock_angular_y = true
 

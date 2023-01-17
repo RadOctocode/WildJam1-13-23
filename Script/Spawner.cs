@@ -29,52 +29,15 @@ public class Spawner : Node
 	public override void _Process(float delta)
 	{
 		var sceneAnimals = GetTree().GetNodesInGroup("Animals");
-		// check to see if the rigid body has an exteremely low speed
-		// check to see if the object has at least one collision
-			//get the tallest Item from this
 		if(sceneAnimals.Count != 0){
 			//If there are animals in the scene
-			List<Spatial> relevantAnimals = new List<Spatial>();
 			for (int i =0; i < sceneAnimals.Count; i++){
-				Spatial currentNode = (Spatial)sceneAnimals[i];
-				RigidBody currentBody = currentNode.GetNode<RigidBody>("RigidBody");
-				if (isStacked(currentBody)){
-					relevantAnimals.Add(currentNode);
+				Vector3 currentTranslation = ((Spatial)sceneAnimals[i]).GlobalTransform.origin;
+				if(currentTranslation.y < 0){
+					GetTree().Quit();
 				}
 			}
-			
-			Spatial newTallestObject = getTallestAnimal(relevantAnimals);
-			Vector3 newTallestPoint = newTallestObject.GlobalTranslation;
-			GD.Print(tallestPoint.y);
-			if (newTallestPoint.y > tallestPoint.y){
-				tallestPoint = newTallestPoint;
-			}
-			
 		}
-	}
-
-	private bool isStacked(RigidBody currentBody){
-		Vector3 currentSpeed = currentBody.LinearVelocity;
-		if (currentSpeed.x <= MINSPEED && currentSpeed.y <= MINSPEED && currentSpeed.z <= MINSPEED){
-			if (currentBody.GetCollidingBodies().Count != 0){
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private Spatial getTallestAnimal(List<Spatial> animals){
-		Spatial returnVal = new Spatial();
-		Vector3 currentTallest = new Vector3(0.0f,0.0f,0.0f);
-		for (int i = 0; i< animals.Count; i++){
-			var currentSpatial = animals[i];
-			Vector3 currentTranslation = currentSpatial.GetGlobalTranslation();
-			if(currentTallest.y < currentTranslation.y){
-				currentTallest = currentTranslation;
-				returnVal = animals[i];
-			}
-		}
-		return returnVal;
 	}
 
 	private void initQueue() {
