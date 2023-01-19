@@ -33,6 +33,7 @@ public class Spawner : Node
 			//If there are animals in the scene
 			for (int i =0; i < sceneAnimals.Count; i++){
 				Vector3 currentTranslation = ((Spatial)sceneAnimals[i]).GlobalTransform.origin;
+				GD.Print(currentTranslation.y);
 				if(currentTranslation.y < 0){
 					GetTree().Quit();
 				}
